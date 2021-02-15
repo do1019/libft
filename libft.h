@@ -6,15 +6,20 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/28 17:17:19 by dogata            #+#    #+#             */
-/*   Updated: 2021/02/15 23:28:48 by dogata           ###   ########.fr       */
+/*   Updated: 2021/02/16 00:08:52 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
+/*
+** list struct
+*/
 typedef struct		s_list
 {
 	void			*content;
@@ -67,7 +72,12 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 
+/*
+** addition
+*/
 long long			ft_atoll(const char *nptr);
 int					ft_strcmp(char *s1, char *s2);
+int					get_next_line(int fd, char **line);
+char				*ft_free_strjoin(const char *s1, const char *s2);
 
 #endif

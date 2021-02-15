@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 16:35:43 by dogata            #+#    #+#             */
-/*   Updated: 2020/07/13 10:15:45 by dogata           ###   ########.fr       */
+/*   Updated: 2021/02/16 00:04:21 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	size_t	count;
 
-	len = 0;
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
-	return (len);
+	count = 0;
+	while ((char)s[count] != '\0')
+		count++;
+	return (count);
 }
