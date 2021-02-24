@@ -6,81 +6,99 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 14:53:07 by dogata            #+#    #+#             */
-/*   Updated: 2020/07/14 00:14:18 by dogata           ###   ########.fr       */
+/*   Updated: 2021/02/24 17:46:25 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*search(char const *str, char const *set)
-{
-	size_t	strcnt;
-	size_t	setcnt;
-
-	strcnt = 0;
-	setcnt = 0;
-	while (str[strcnt] != '\0' && set[setcnt] != '\0')
-	{
-		if (str[strcnt] != set[setcnt])
-			setcnt++;
-		else
-		{
-			strcnt++;
-			setcnt = 0;
-		}
-	}
-	return ((char*)str + strcnt);
-}
-
-static char	*search_first(char const *str, char const *set)
-{
-	char *ans;
-
-	ans = search(str, set);
-	if (*ans == '\0')
-		return (NULL);
-	return (ans);
-}
-
-static char	*search_last(char const *str, char const *set)
-{
-	char *tmp;
-	char *ans;
-
-	while (*str != '\0')
-	{
-		tmp = search(str, set);
-		if (*tmp != '\0')
-			ans = tmp;
-		str++;
-	}
-	return (ans);
-}
-
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	char	*first;
-	char	*last;
-	char	*trmstr;
-	size_t	trmstrlen;
-	size_t	count;
+	size_t	front;
+	size_t	back;
 
-	if (s1 == NULL)
+	if (!s1 || !set)
 		return (NULL);
-	count = 0;
-	first = search_first(s1, set);
-	if (first == NULL)
-		return (ft_strdup(""));
-	last = search_last(s1, set);
-	trmstrlen = (last - first) + 2;
-	if (!(trmstr = (char *)ft_calloc(trmstrlen, sizeof(char))))
-		return (NULL);
-	while (trmstrlen != 1)
-	{
-		trmstr[count] = first[count];
-		count++;
-		trmstrlen--;
-	}
-	trmstr[count] = '\0';
-	return (trmstr);
+	front = 0;
+	back = ft_strlen(s1);
+	while (s1[front] && ft_strchr(set, s1[front]))
+		front++;
+	while (front < back && ft_strchr(set, s1[back]))
+		back--;
+	return (ft_substr(s1, front, back - front + 1));
 }
+
+/*
+** static char	*search(char const *str, char const *set)
+** {
+** 	size_t	strcnt;
+** 	size_t	setcnt;
+**
+** 	strcnt = 0;
+** 	setcnt = 0;
+** 	while (str[strcnt] != '\0' && set[setcnt] != '\0')
+** 	{
+** 		if (str[strcnt] != set[setcnt])
+** 			setcnt++;
+** 		else
+** 		{
+** 			strcnt++;
+** 			setcnt = 0;
+** 		}
+** 	}
+** 	return ((char*)str + strcnt);
+** }
+**
+** static char	*search_first(char const *str, char const *set)
+** {
+** 	char *ans;
+**
+** 	ans = search(str, set);
+** 	if (*ans == '\0')
+** 		return (NULL);
+** 	return (ans);
+** }
+**
+** static char	*search_last(char const *str, char const *set)
+** {
+** 	char *tmp;
+** 	char *ans;
+**
+** 	while (*str != '\0')
+** 	{
+** 		tmp = search(str, set);
+** 		if (*tmp != '\0')
+** 			ans = tmp;
+** 		str++;
+** 	}
+** 	return (ans);
+** }
+**
+** char		*ft_strtrim(char const *s1, char const *set)
+** {
+** 	char	*first;
+** 	char	*last;
+** 	char	*trmstr;
+** 	size_t	trmstrlen;
+** 	size_t	count;
+**
+** 	if (!s1 || !set)
+** 		return (NULL);
+** 	count = 0;
+** 	first = search_first(s1, set);
+** 	if (first == NULL)
+** 		return (ft_strdup(""));
+** 	last = search_last(s1, set);
+** 	trmstrlen = (last - first) + 2;
+** 	if (!(trmstr = (char *)ft_calloc(trmstrlen, sizeof(char))))
+** 		return (NULL);
+** 	while (trmstrlen != 1)
+** 	{
+** 		trmstr[count] = first[count];
+** 		count++;
+** 		trmstrlen--;
+** 	}
+** 	trmstr[count] = '\0';
+** 	return (trmstr);
+** }
+*/
