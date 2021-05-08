@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 14:18:01 by dogata            #+#    #+#             */
-/*   Updated: 2020/07/19 17:52:12 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:17:46 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	llen = ft_strlen(little);
 	if (llen == 0)
-		return ((char*)big);
+		return ((char *)big);
 	first = ft_strchr(big, little[0]);
 	while ((first != NULL) && ((first - big + llen) <= len))
 	{

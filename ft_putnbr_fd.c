@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 05:16:32 by dogata            #+#    #+#             */
-/*   Updated: 2020/07/14 16:27:36 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:15:51 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	count_digit(int n)
 {
-	size_t digit;
+	size_t	digit;
 
 	digit = 0;
 	while (n)
@@ -25,7 +25,7 @@ static int	count_digit(int n)
 	return (digit);
 }
 
-void		ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	nbr[11];
 	int		rem;

@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 18:38:52 by dogata            #+#    #+#             */
-/*   Updated: 2020/07/11 19:01:06 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:01:58 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list *current;
+	t_list	*current;
 
 	if (!lst || !f)
 		return ;

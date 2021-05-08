@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 18:40:24 by dogata            #+#    #+#             */
-/*   Updated: 2020/07/17 16:47:37 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/17 20:36:53 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,13 @@ static char	**free_memory(char **ans)
 	return (NULL);
 }
 
-static char	*convert_to_null_character(char *s, char c, char *dest)
+static char	*convert_c_to_null(char *s, char c, char *dest)
 {
 	int		count;
 
 	count = 0;
+	if (!dest)
+		return (NULL);
 	while (*s)
 	{
 		if (*s == c)
@@ -71,26 +73,27 @@ static char	*convert_to_null_character(char *s, char c, char *dest)
 	return (dest);
 }
 
-static char	**do_split(char const *s, char c, int array, int slen)
+static char	**do_split(char *s, char c, int array, int slen)
 {
 	char	**ans;
 	char	*nulls;
 	char	*tmp;
-	int		count;
+	int		array_count;
 
-	count = array;
-	if (!(ans = (char **)ft_calloc(array + 1, sizeof(char *))))
+	array_count = 0;
+	ans = ft_calloc(array + 1, sizeof(char *));
+	if (ans == NULL)
 		return (NULL);
-	array = 0;
-	if (!(nulls = (char *)ft_calloc(slen + 1, sizeof(char))))
+	nulls = convert_c_to_null(s, c, ft_calloc(slen + 1, sizeof(char)));
+	if (nulls == NULL)
 		return (free_memory(ans));
-	nulls = convert_to_null_character((char *)s, c, nulls);
 	tmp = nulls;
-	while (count--)
+	while (array--)
 	{
 		while (*nulls == '\0')
 			nulls++;
-		if (!(ans[array++] = ft_substr(nulls, 0, ft_strlen(nulls))))
+		ans[array_count++] = ft_substr(nulls, 0, ft_strlen(nulls));
+		if (ans[array_count - 1] == NULL)
 			return (free_memory(ans));
 		while (*nulls != '\0')
 			nulls++;
@@ -99,18 +102,17 @@ static char	**do_split(char const *s, char c, int array, int slen)
 	return (ans);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**ans;
-	int		array;
-	int		slen;
+	int		array_count;
 
 	if (!s)
 		return (NULL);
-	array = count_array(s, c);
-	slen = ft_strlen(s);
-	if (!(ans = do_split(s, c, array, slen)))
+	array_count = count_array(s, c);
+	ans = do_split((char *)s, c, array_count, ft_strlen(s));
+	if (ans == NULL)
 		return (NULL);
-	ans[array] = NULL;
+	ans[array_count] = NULL;
 	return (ans);
 }

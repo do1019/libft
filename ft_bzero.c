@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 22:06:44 by dogata            #+#    #+#             */
-/*   Updated: 2020/06/28 17:53:07 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:18:25 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *tmp;
+	char	*tmp;
 
 	tmp = s;
 	while (n != 0)

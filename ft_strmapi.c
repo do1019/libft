@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 08:16:03 by dogata            #+#    #+#             */
-/*   Updated: 2020/07/13 05:02:15 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:17:24 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	count = 0;
 	slen = ft_strlen(s);
-	if (!(ans = ft_calloc(slen + 1, sizeof(char))))
+	ans = ft_calloc(slen + 1, sizeof(char));
+	if (ans == NULL)
 		return (NULL);
 	while (slen)
 	{

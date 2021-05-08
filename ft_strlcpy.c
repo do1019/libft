@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 20:04:18 by dogata            #+#    #+#             */
-/*   Updated: 2020/07/13 10:18:45 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:15:17 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t ans;
+	size_t	ans;
 
 	ans = ft_strlen(src);
 	if (size > 0)

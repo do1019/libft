@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/28 17:17:19 by dogata            #+#    #+#             */
-/*   Updated: 2021/02/16 00:08:52 by dogata           ###   ########.fr       */
+/*   Updated: 2021/05/08 07:46:01 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 /*
 ** list struct
 */
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -38,7 +38,7 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *str, int chr);
 char				*ft_strrchr(const char *str, int chr);
-char				*ft_strnstr(const char *big, const char *little,
+char				*ft_strnstr(const char *big, const char *little, \
 					size_t len);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *nptr);
@@ -69,15 +69,16 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), \
 					void (*del)(void *));
 
 /*
-** addition
+** add
 */
 long long			ft_atoll(const char *nptr);
 int					ft_strcmp(char *s1, char *s2);
-int					get_next_line(int fd, char **line);
 char				*ft_free_strjoin(const char *s1, const char *s2);
+char				*ft_strndup(char *s, int len);
+int					get_next_line(int fd, char **line);
 
 #endif

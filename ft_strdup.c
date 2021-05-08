@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/30 18:22:40 by dogata            #+#    #+#             */
-/*   Updated: 2020/08/03 11:32:18 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:16:25 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 
 	size = ft_strlen(s);
-	dup = (char*)ft_calloc(size + 1, sizeof(char));
+	dup = (char *)ft_calloc(size + 1, sizeof(char));
 	if (dup == NULL)
 		return (NULL);
 	dup = ft_memcpy(dup, s, size);

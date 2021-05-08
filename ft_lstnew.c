@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 00:11:58 by dogata            #+#    #+#             */
-/*   Updated: 2020/07/13 06:11:08 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:04:43 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *lst;
+	t_list	*lst;
 
-	if (!(lst = (t_list *)malloc(sizeof(t_list))))
+	lst = (t_list *)malloc(sizeof(t_list));
+	if (lst == NULL)
 		return (NULL);
 	lst->content = content;
 	lst->next = NULL;

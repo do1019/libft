@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/29 21:11:13 by dogata            #+#    #+#             */
-/*   Updated: 2020/12/20 11:54:32 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:16:48 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int num;
-	int mflag;
+	int	num;
+	int	mflag;
 
 	num = 0;
 	mflag = 1;
-	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\v'
+	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\v' \
 	|| *nptr == '\f' || *nptr == '\r' || *nptr == '\n')
 		nptr++;
 	if (*nptr == '-')

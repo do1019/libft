@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:39:52 by dogata            #+#    #+#             */
-/*   Updated: 2020/12/20 11:54:36 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:02:27 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ long long	ft_atoll(const char *nptr)
 
 	num = 0;
 	mflag = 1;
-	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\v'
+	while (*nptr == ' ' || *nptr == '\t' || *nptr == '\v' \
 	|| *nptr == '\f' || *nptr == '\r' || *nptr == '\n')
 		nptr++;
 	if (*nptr == '-')

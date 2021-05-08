@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
+/*   ft_free_strjoin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 00:01:53 by dogata            #+#    #+#             */
-/*   Updated: 2021/02/16 00:01:55 by dogata           ###   ########.fr       */
+/*   Updated: 2021/04/16 05:09:37 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char	*ft_free_strjoin(const char *s1, const char *s2)
 		return (NULL);
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
-	if (!(cstr = malloc(sizeof(char) * (s1len + s2len + 1))))
+	cstr = malloc(sizeof(char) * (s1len + s2len + 1));
+	if (cstr == NULL)
 	{
 		free((char *)s1);
 		return (NULL);
