@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 08:40:57 by dogata            #+#    #+#             */
-/*   Updated: 2021/05/08 10:36:28 by dogata           ###   ########.fr       */
+/*   Updated: 2021/05/08 10:38:07 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	join_and_store_in_line(int fd, char **save, char *buf, char **line)
 		buf[rv] = '\0';
 		nl = ft_strchr(buf, '\n');
 		if (nl)
-			merge_up_to_newline_and_save(save, buf, line, nl);
+			return(merge_up_to_newline_and_save(save, buf, line, nl));
 		else
 		{
 			*save = ft_free_strjoin(*save, buf);
