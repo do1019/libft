@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 08:40:57 by dogata            #+#    #+#             */
-/*   Updated: 2021/05/08 09:50:58 by dogata           ###   ########.fr       */
+/*   Updated: 2021/05/08 10:36:28 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ int	get_next_line(int fd, char **line)
 {
 	static char	*save[FD_MAX + 1];
 	char		*buf;
-	char		*new_line;
 	int			result;
 
 	if (fd < 0 || FD_MAX < fd || BUFFER_SIZE < 1 || !line)
