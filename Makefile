@@ -6,7 +6,7 @@
 #    By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/02 08:42:26 by dogata            #+#    #+#              #
-#    Updated: 2021/04/17 20:44:54 by dogata           ###   ########.fr        #
+#    Updated: 2021/05/09 04:26:33 by dogata           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ SRCS := ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 	ft_split.c ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c \
 	ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 	ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
-	ft_atoll.c ft_strcmp.c ft_free_strjoin.c \
-	ft_strndup.c
+	ft_atoll.c ft_strcmp.c ft_free_strjoin.c get_next_line.c
 
 SRCS_BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \

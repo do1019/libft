@@ -6,7 +6,7 @@
 /*   By: dogata <dogata@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/28 17:17:19 by dogata            #+#    #+#             */
-/*   Updated: 2021/05/08 07:46:01 by dogata           ###   ########.fr       */
+/*   Updated: 2021/05/09 04:25:55 by dogata           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), \
 long long			ft_atoll(const char *nptr);
 int					ft_strcmp(char *s1, char *s2);
 char				*ft_free_strjoin(const char *s1, const char *s2);
-char				*ft_strndup(char *s, int len);
 int					get_next_line(int fd, char **line);
 
 #endif
